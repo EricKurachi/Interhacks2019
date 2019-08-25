@@ -17,7 +17,7 @@
     <script>
 
     // set the dimensions and margins of the graph
-    var margin = {top: 20, right: 25, bottom: 30, left: 40},
+    var margin = {top: 20, right: 25, bottom: 30, left: 60},
       width = 450 - margin.left - margin.right,
       height = 450 - margin.top - margin.bottom;
 
@@ -31,7 +31,7 @@
             "translate(" + margin.left + "," + margin.top + ")");
 
     //Read the data
-    d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/heatmap_data.csv", function(data) {
+    d3.csv("https://raw.githubusercontent.com/EricKurachi/Interhacks2019/master/dados.csv", function(data) {
 
       // Labels of row and columns -> unique identifier of the column called 'group' and 'variable'
       var myGroups = d3.map(data, function(d){return d.group;}).keys()
@@ -84,7 +84,7 @@
       }
       var mousemove = function(d) {
         Tooltip
-          .html("The exact value of<br>this cell is: " + d.value)
+          .html("Esse aluno tem " + d.value + "%<br>de chances de trancar")
           .style("left", (d3.mouse(this)[0]+70) + "px")
           .style("top", (d3.mouse(this)[1]) + "px")
       }
