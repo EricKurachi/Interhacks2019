@@ -1,0 +1,30 @@
+ body {
+ background-image: url("fundo-moti.png");
+}
+
+.blackText{
+    color: black;
+    font-family: 'Roboto', arial;
+}
+
+.btn {
+    color: black;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Roboto', arial;
+    vertical-align: text-bottom;
+    text-align: left;
+    text-indent: 200px;
+
+}
+
+<style>
+  .bottom-three {
+     margin-bottom: 10cm;
+  }
+</style>
+
+hr{
+border-width: 20px
+}
