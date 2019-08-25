@@ -89,17 +89,18 @@
         </div>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Ir</button>
-    </form>
+
   </div>
 </nav>
 
-  <div class="w3-sidebar w3-bar-block w3-card" style="width:25%;right:0;">
+  <div class="w3-sidebar w3-bar-block w3-card" style="width:25%;right:0;top:0;">
+    <form class="form-inline my-2 my-lg-0" style="right:100;top:100;">
+      <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Ir</button>
+    </form>
   <h3 class="w3-bar-item">Análises</h3>
   <a href="#" class="w3-bar-item w3-button">Por campus</a>
-  <a href="#" class="w3-bar-item w3-button">Por àrea</a>
+  <a href="#" class="w3-bar-item w3-button">Por área</a>
   <a href="#" class="w3-bar-item w3-button">Por curso</a>
 </div>
 
@@ -189,7 +190,7 @@
         Tooltip
           .html("A unidade tem " + d.value + "<br> alunos nesse grupo")
           .style("left", (d3.mouse(this)[0]+70) + "px")
-          .style("top", (d3.mouse(this)[1]) + "px")
+          .style("top", (d3.mouse(this)[1]+140) + "px")
       }
       var mouseleave = function(d) {
         Tooltip
@@ -250,12 +251,12 @@
         .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
     // Create dummy data
-    var data = {a: 9, b: 20, c:30, d:8, e:12, f:3, g:7, h:14}
+    var data = {Alto: 9, Médio: 20, Baixo:30}
 
     // set the color scale
     var color = d3.scaleOrdinal()
-      .domain(["a", "b", "c", "d", "e", "f", "g", "h"])
-      .range(d3.schemeDark2);
+      .domain(["Alto", "Médio", "Baixo"])
+      .range(["#ff2700", "#ffdb00" , "#15ff00"]);
 
     // Compute the position of each group on the pie:
     var pie = d3.pie()
