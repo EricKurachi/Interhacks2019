@@ -60,7 +60,7 @@
 
       // Build color scale
       var myColor = d3.scaleSequential()
-        .interpolator(d3.interpolatePlasma)
+        .interpolator(d3.interpolateBlues)
         .domain([1,100])
 
       // create a tooltip
@@ -84,7 +84,7 @@
       }
       var mousemove = function(d) {
         Tooltip
-          .html("Esse aluno tem " + d.value + "%<br>de chances de trancar")
+          .html("A unidade tem " + d.value + "<br> alunos nesse grupo")
           .style("left", (d3.mouse(this)[0]+70) + "px")
           .style("top", (d3.mouse(this)[1]) + "px")
       }
