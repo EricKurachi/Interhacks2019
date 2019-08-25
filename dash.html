@@ -88,20 +88,13 @@
           <a class="dropdown-item" href="#">Download BD</a>
         </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Sair</a>
-      </li>
     </ul>
 
   </div>
 </nav>
 
-  <div class="w3-sidebar w3-bar-block w3-card" style="width:25%;right:0;top:0">
-    <form class="form-inline my-2 my-lg-0" style="right:100;top:100;">
-      <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Ir</button>
-    </form>
-  <h3 class="w3-bar-item">Análises</h3>
+  <div class="w3-sidebar w3-bar-block w3-card" style="width:25%;right:0;top:0;">
+  <h3 class="w3-bar-item">Análises Estatísticas</h3>
   <a href="#" class="w3-bar-item w3-button">Por campus</a>
   <a href="#" class="w3-bar-item w3-button">Por área</a>
   <a href="#" class="w3-bar-item w3-button">Por curso</a>
@@ -235,14 +228,12 @@
     <!-- Create a div where the graph will take place -->
     <div id="my_dataviz"></div>
 
-
-
     <script>
 
     // set the dimensions and margins of the graph
     var width = 450
         height = 450
-        margin = 50
+        margin = 40
 
     // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
     var radius = Math.min(width, height) / 2 - margin
@@ -325,7 +316,7 @@
         .style('text-anchor', function(d) {
             var midangle = d.startAngle + (d.endAngle - d.startAngle) / 2
             return (midangle < Math.PI ? 'start' : 'end')
-        })        
+        })
 
     </script>
 
