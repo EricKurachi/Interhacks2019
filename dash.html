@@ -88,12 +88,15 @@
           <a class="dropdown-item" href="#">Download BD</a>
         </div>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Sair</a>
+      </li>
     </ul>
 
   </div>
 </nav>
 
-  <div class="w3-sidebar w3-bar-block w3-card" style="width:25%;right:0;top:0;">
+  <div class="w3-sidebar w3-bar-block w3-card" style="width:25%;right:0;top:0">
     <form class="form-inline my-2 my-lg-0" style="right:100;top:100;">
       <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Ir</button>
@@ -232,12 +235,14 @@
     <!-- Create a div where the graph will take place -->
     <div id="my_dataviz"></div>
 
+
+
     <script>
 
     // set the dimensions and margins of the graph
     var width = 450
         height = 450
-        margin = 40
+        margin = 50
 
     // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
     var radius = Math.min(width, height) / 2 - margin
@@ -321,6 +326,41 @@
             var midangle = d.startAngle + (d.endAngle - d.startAngle) / 2
             return (midangle < Math.PI ? 'start' : 'end')
         })
+
+
+
+        // create a tooltip
+        var Tooltip = d3.select("my_dataviz")
+          .append("div")
+          .style("opacity", 0)
+          .attr("class", "tooltip")
+          .style("background-color", "white")
+          .style("border", "solid")
+          .style("border-width", "2px")
+          .style("border-radius", "5px")
+          .style("padding", "5px")
+
+        // Three function that change the tooltip when user hover / move / leave a cell
+        var mouseover = function(d) {
+          Tooltip
+            .style("opacity", 1)
+          d3.select(this)
+            .style("stroke", "black")
+            .style("opacity", 1)
+        }
+        var mousemove = function(d) {
+          Tooltip
+            .html("A unidade tem " + "<br> alunos nesse grupo")
+            .style("left", (d3.mouse(this)[0]+70) + "px")
+            .style("top", (d3.mouse(this)[1]+140) + "px")
+        }
+        var mouseleave = function(d) {
+          Tooltip
+            .style("opacity", 0)
+          d3.select(this)
+            .style("stroke", "none")
+            .style("opacity", 0.8)
+        }
 
     </script>
 
